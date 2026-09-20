@@ -4,28 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cheezie Engine Settings</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="tabs">
-      <div class="tab active" data-panel="chess">Settings</div>
-      <div class="tab" data-panel="load">Load</div>
-      <div class="tab" data-panel="export">Export</div>
+    <header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">♟</div>
+    <div class="brand-copy">
+      <strong>CHEEZIE ENGINE</strong>
+      <span>Chess analysis controls</span>
     </div>
+    <span class="version-pill">v1.0.0</span>
+  </div>
+  <nav class="tabs" aria-label="Popup pages">
+    <button class="tab active" type="button" data-panel="chess">Settings</button>
+    <button class="tab" type="button" data-panel="load">Import</button>
+    <button class="tab" type="button" data-panel="export">Export</button>
+  </nav>
+</header>
 
-    <!-- ================= SETTINGS ================= -->
+<!-- ================= SETTINGS ================= -->
     <div class="panel active" id="chess">
       <div class="container">
-        <h1>Cheezie Engine</h1>
+        <div class="settings-intro">
+          <div>
+            <span class="eyebrow">CONFIGURATION</span>
+            <h1>Engine Settings</h1>
+            <p>Fine-tune analysis, coach, display, and automation from one place.</p>
+          </div>
+        </div>
+        <nav class="section-nav" aria-label="Settings sections">
+          <a href="#section-coach">Coach</a>
+          <a href="#section-engine">Engine</a>
+          <a href="#section-display">Display</a>
+          <a href="#section-automation">Automation</a>
+          <a href="#section-hide">Hide</a>
+        </nav>
 
         <!-- COACH CARD -->
-        <div class="section-divider"><span>Coach</span></div>
+        <div class="section-divider" id="section-coach"><span>Coach</span><i></i></div>
 
         <div class="coach-card" id="coach-card-wrap">
           <div class="coach-card-inner">
@@ -663,7 +681,7 @@
 
         <!-- ENGINE -->
         <!-- #region engine -->
-        <div class="section-divider"><span>Engine</span></div>
+        <div class="section-divider" id="section-engine"><span>Engine</span><i></i></div>
 
         <div class="coach-card" id="engine-card-wrap">
           <div class="coach-card-inner">
@@ -910,7 +928,7 @@
           </div>
 
           <!-- DISPLAY -->
-          <div class="section-divider"><span>Display</span></div>
+          <div class="section-divider" id="section-display"><span>Display</span><i></i></div>
 
           <div class="maia3 komodo stockfish11 stockfish6 wukong lozza">
             <div class="setting">
@@ -978,7 +996,7 @@
           <div class="setting-help">Displays the engine evaluation bar.</div>
 
           <!-- AUTOMATION -->
-          <div class="section-divider"><span>Automation</span></div>
+          <div class="section-divider" id="section-automation"><span>Automation</span><i></i></div>
 
           <div class="setting dual">
             <label>
@@ -1204,7 +1222,7 @@
           </div>
         </div>
 
-        <div class="section-divider"><span>HIDE</span></div>
+        <div class="section-divider" id="section-hide"><span>Hide</span><i></i></div>
 
         <div class="setting">
           <span id="onlyShowEvalLabel">HIDE EVERYTHING (OFF)</span>
@@ -1230,7 +1248,7 @@
 
     <!-- ================= LOAD ================= -->
     <div class="panel" id="load">
-      <p class="panel-title">Load Settings</p>
+      <div class="panel-heading"><span class="eyebrow">CONFIGURATION</span><p class="panel-title">Import Settings</p></div>
       <p class="load-hint">
         Paste a previously exported JSON config below and click Load.
       </p>
@@ -1255,7 +1273,7 @@
 
     <!-- ================= EXPORT ================= -->
     <div class="panel" id="export">
-      <p class="panel-title">Export Settings</p>
+      <div class="panel-heading"><span class="eyebrow">CONFIGURATION</span><p class="panel-title">Export Settings</p></div>
       <p class="load-hint">
         Click Export to generate your current config as JSON.
       </p>
